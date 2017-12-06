@@ -1,0 +1,8 @@
+@import 'assets/stylesheets/common';
+@import 'assets/stylesheets/normalize';
+@import 'assets/stylesheets/fonts';
+
+body {
+  font-family: 'FGrotesk', serif;
+  @include clearfix;
+}

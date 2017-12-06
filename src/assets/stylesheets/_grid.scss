@@ -1,0 +1,70 @@
+$outer-gutter: 40px;
+
+$gutter-mobile: 2vw;
+$gutter-tablet: 4vw;
+$gutter-desktop: 40px;
+
+$grid-margin-mobile: calc(#{$outer-gutter} - #{$gutter-mobile});
+$grid-margin-tablet: calc(#{$outer-gutter} - #{$gutter-tablet});
+
+$neat-grid: (
+  columns: 12,
+  gutter: $gutter-mobile
+);
+
+$grid-m: (
+  columns: 12,
+  gutter: $gutter-tablet,
+  media: 758px
+);
+
+$grid-l: (
+  columns: 12,
+  gutter: $gutter-desktop,
+  media: 1000px
+);
+
+$grid-xl: (
+  columns: 12,
+  gutter: $gutter-desktop,
+  media: 1240px
+);
+
+@import 'neat';
+
+@mixin bento-grid-container() {
+  @include grid-container;
+  margin: 0 $grid-margin-mobile;
+
+  @include grid-media($grid-m) {
+    @include grid-container;
+    margin: 0 $grid-margin-tablet;
+  }
+
+  @include grid-media($grid-l) {
+    @include grid-container;
+    width: rem(1000px);
+    margin: 0 auto;
+  }
+
+  @include grid-media($grid-xl) {
+    @include grid-container;
+    width: rem(1240px);
+  }
+}
+
+@mixin bento-grid-collapsed() {
+  @include grid-collapse;
+
+  @include grid-media($grid-m) {
+    @include grid-collapse;
+  }
+
+  @include grid-media($grid-l) {
+    @include grid-collapse;
+  }
+
+  @include grid-media($grid-xl) {
+    @include grid-collapse;
+  }
+}
