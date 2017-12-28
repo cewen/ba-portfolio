@@ -24,18 +24,6 @@ function ensureSlash(path, needsSlash) {
 
 const neatIncludePaths = require('node-neat').includePaths;
 
-console.log('#$%^#$%^#%^#^%#^#$%^#$%^#$^#$%^#$^#$')
-console.log('#$%^#$%^#%^#^%#^#$%^#$%^#$^#$%^#$^#$')
-console.log('#$%^#$%^#%^#^%#^#$%^#$%^#$^#$%^#$^#$')
-console.log('#$%^#$%^#%^#^%#^#$%^#$%^#$^#$%^#$^#$')
-console.log('#$%^#$%^#%^#^%#^#$%^#$%^#$^#$%^#$^#$')
-console.log(neatIncludePaths)
-console.log('#$%^#$%^#%^#^%#^#$%^#$%^#$^#$%^#$^#$')
-console.log('#$%^#$%^#%^#^%#^#$%^#$%^#$^#$%^#$^#$')
-console.log('#$%^#$%^#%^#^%#^#$%^#$%^#$^#$%^#$^#$')
-console.log('#$%^#$%^#%^#^%#^#$%^#$%^#$^#$%^#$^#$')
-console.log('#$%^#$%^#%^#^%#^#$%^#$%^#$^#$%^#$^#$')
-
 const getPublicUrl = appPackageJson =>
   envPublicUrl || require(appPackageJson).homepage;
 

@@ -18,6 +18,11 @@
   height: 100%;
 }
 
+.gridCollapse {
+  @include ba-grid-collapse;
+  height: 100%;
+}
+
 .gridColumn {
   @include grid-column(1);
   height: 100%;

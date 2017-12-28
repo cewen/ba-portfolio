@@ -1,71 +1,55 @@
-$outer-gutter: 40px;
-
 $gutter-mobile: 2vw;
-$gutter-tablet: 4vw;
-$gutter-desktop: 40px;
-
-$grid-margin-mobile: calc(#{$outer-gutter} - #{$gutter-mobile});
-$grid-margin-tablet: calc(#{$outer-gutter} - #{$gutter-tablet});
+$gutter-tablet: 50px;
+$gutter-desktop: 80px;
 
 $neat-grid: (
-  columns: 12,
+  columns: 6,
   gutter: $gutter-mobile
 );
 
 $grid-m: (
-  columns: 12,
+  columns: 6,
   gutter: $gutter-tablet,
-  media: 758px
+  media: 720px
 );
 
 $grid-l: (
-  columns: 12,
+  columns: 6,
   gutter: $gutter-desktop,
-  media: 1000px
+  media: 1120px
 );
 
-$grid-xl: (
-  columns: 12,
-  gutter: $gutter-desktop,
-  media: 1240px
-);
-
-//@import '/Users/chrisewen/Sites/ba-portfolio/node_modules/bourbon-neat/core/neat';
 @import 'neat';
 
-@mixin ba-grid-container() {
+@mixin ba-grid-container {
   @include grid-container;
-  margin: 0 $grid-margin-mobile;
+  max-width: rem(520px);
+  margin: 0 auto;
 
   @include grid-media($grid-m) {
     @include grid-container;
-    margin: 0 $grid-margin-tablet;
-  }
-
-  @include grid-media($grid-l) {
-    @include grid-container;
-    width: rem(1000px);
+    max-width: none;
+    width: rem(640px);
     margin: 0 auto;
   }
 
-  @include grid-media($grid-xl) {
+  @include grid-media($grid-l) {
     @include grid-container;
-    width: rem(1240px);
+    width: rem(1120px);
+    margin: 0 auto;
   }
 }
 
-@mixin bento-grid-collapsed() {
+@mixin ba-grid-collapse {
   @include grid-collapse;
+  padding: rem(0 30px);
 
   @include grid-media($grid-m) {
     @include grid-collapse;
+    padding: 0;
   }
 
   @include grid-media($grid-l) {
-    @include grid-collapse;
-  }
-
-  @include grid-media($grid-xl) {
     @include grid-collapse;
   }
 }
