@@ -30,9 +30,10 @@ $grid-xl: (
   media: 1240px
 );
 
+//@import '/Users/chrisewen/Sites/ba-portfolio/node_modules/bourbon-neat/core/neat';
 @import 'neat';
 
-@mixin bento-grid-container() {
+@mixin ba-grid-container() {
   @include grid-container;
   margin: 0 $grid-margin-mobile;
 

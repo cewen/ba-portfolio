@@ -1,0 +1,33 @@
+@import 'neat';
+@import '../../assets/stylesheets/common';
+
+.grid {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10000;
+}
+
+.gridColumns {
+  @include clearfix;
+  @include ba-grid-container;
+  height: 100%;
+}
+
+.gridColumn {
+  @include grid-column(1);
+  height: 100%;
+  background: rgba(#21d1aa, .2);
+
+  @include grid-media($grid-m) {
+    @include grid-column(1);
+  }
+
+  @include grid-media($grid-l) {
+    @include grid-column(1);
+  }
+}
