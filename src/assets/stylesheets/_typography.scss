@@ -1,59 +1,33 @@
-$type-founders-semibold-font-family: 'FoundersGroteskCond-SmBd', 'Helvetica', 'Arial', sans-serif;
-$type-founders-mono-font-family: 'FoundersGroteskMono-Regular', "Lucida Sans Typewriter", "Lucida Console", monaco, "Bitstream Vera Sans Mono", monospace;
-$type-publico-font-family: 'PublicoText', TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;
-$type-publico-light-font-family: 'PublicoHeadline-Light', "Times New Roman", Times, Baskerville, Georgia, serif;
-$type-futura-font-family: 'FuturaStd-Heavy', 'Helvetica', 'Arial', sans-serif;
+$type-founders-font-family: 'FoundersGrotesk', 'Helvetica', 'Arial', sans-serif;
+$type-warnock-bold-font-family: 'WarnockProBold', 'Times New Roman', Times, Baskerville, Georgia, serif;
+$type-warnock-light-font-family: 'WarnockProLight', 'Times New Roman', Times, Baskerville, Georgia, serif;
 
 @mixin type-size-leading($size, $leading: $size) {
   font-size: rem($size);
   line-height: rem($leading);
 }
 
-@mixin type($typeface) {
-  font-weight: normal;
-
-  @if ($typeface == founders) {
-    font-family: $type-founders-semibold-font-family;
-  }
-
-  @else if ($typeface == founders-mono) {
-    font-family: $type-founders-mono-font-family;
-  }
-
-  @else if ($typeface == publico) {
-    font-family: $type-publico-font-family;
-  }
-
-  @else if ($typeface == publico-light) {
-    font-family: $type-publico-light-font-family;
-  }
-
-  @else if ($typeface == futura) {
-    font-family: $type-futura-font-family;
-  }
-}
-
-@mixin founders() {
-  font-family: $type-founders-semibold-font-family;
+@mixin founders {
+  font-family: $type-founders-font-family;
   font-weight: normal;
 }
 
-@mixin founders-mono() {
-  font-family: $type-founders-mono-font-family;
-  font-weight: normal;
+@mixin founders-bold {
+  font-family: $type-founders-font-family;
+  font-weight: 700;
 }
 
-@mixin publico() {
-  font-family: $type-publico-font-family;
-  font-weight: normal;
+@mixin founders-light {
+  font-family: $type-founders-font-family;
+  font-weight: 300;
 }
 
-@mixin publico-light() {
-  font-family: $type-publico-light-font-family;
-  font-weight: normal;
+@mixin warnock-bold {
+  font-family: $type-warnock-bold-font-family;
+  font-weight: 700;
 }
 
-@mixin futura() {
-  font-family: $type-futura-font-family;
-  font-weight: normal;
+@mixin warnock-light {
+  font-family: $type-warnock-light-font-family;
+  font-weight: 300;
 }

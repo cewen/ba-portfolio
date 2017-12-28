@@ -1,5 +1,5 @@
 @font-face {
-  font-family: 'FGrotesk';
+  font-family: 'FoundersGrotesk';
   src: url('assets/fonts/FGroteskBook.eot');
   src:
     url('assets/fonts/FGroteskBook.eot?#iefix') format('embedded-opentype'),
@@ -9,7 +9,7 @@
 }
 
 @font-face {
-  font-family: 'FGrotesk';
+  font-family: 'FoundersGrotesk';
   src: url('assets/fonts/FGroteskDemi.eot');
   src:
     url('assets/fonts/FGroteskDemi.eot?#iefix') format('embedded-opentype'),
@@ -19,7 +19,7 @@
 }
 
 @font-face {
-  font-family: 'FGrotesk';
+  font-family: 'FoundersGrotesk';
   src: url('assets/fonts/FGroteskThin.eot');
   src:
     url('assets/fonts/FGroteskThin.eot?#iefix') format('embedded-opentype'),
@@ -29,22 +29,12 @@
 }
 
 @font-face {
-  font-family: 'FGrotesk';
-  src: url('assets/fonts/FGroteskBook.eot');
-  src:
-    url('assets/fonts/FGroteskBook.eot?#iefix') format('embedded-opentype'),
-    url('assets/fonts/FGroteskBook.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
   font-family: 'WarnockProBold';
   src: url('assets/fonts/WarnockPro-BoldDisp.eot');
   src:
     url('assets/fonts/WarnockPro-BoldDisp.eot?#iefix') format('embedded-opentype'),
     url('assets/fonts/WarnockPro-BoldDisp.woff') format('woff');
-  font-weight: normal;
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -54,6 +44,6 @@
   src:
     url('assets/fonts/WarnockPro-LightDisp.eot?#iefix') format('embedded-opentype'),
     url('assets/fonts/WarnockPro-LightDisp.woff') format('woff');
-  font-weight: normal;
+  font-weight: 300;
   font-style: normal;
 }

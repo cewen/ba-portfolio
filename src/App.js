@@ -5,7 +5,7 @@ import Home from './views/Home';
 import Project from './views/Project';
 import GridGuides from './components/GridGuides';
 
-import './App.css';
+import './App.scss';
 
 class App extends Component {
   render() {

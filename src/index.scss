@@ -1,6 +1,6 @@
-@import 'assets/stylesheets/common';
-@import 'assets/stylesheets/normalize';
-@import 'assets/stylesheets/fonts';
+@import '~assets/stylesheets/common';
+@import '~assets/stylesheets/normalize';
+@import '~assets/stylesheets/fonts';
 
 * {
   box-sizing: border-box;
@@ -8,5 +8,4 @@
 
 body {
   font-family: 'FGrotesk', serif;
-  @include clearfix;
 }
