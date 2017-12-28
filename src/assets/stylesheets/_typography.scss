@@ -31,3 +31,138 @@ $type-warnock-light-font-family: 'WarnockProLight', 'Times New Roman', Times, Ba
   font-family: $type-warnock-light-font-family;
   font-weight: 300;
 }
+
+@mixin type-body {
+  @include founders-light;
+  @include type-size-leading(16px, 34px);
+}
+
+@mixin type-credit-header {
+  @include founders-light;
+  @include type-size-leading(12px, 20px);
+}
+
+@mixin type-credit-body {
+  @include founders-light;
+  @include type-size-leading(12px, 20px);
+
+  @include grid-media($grid-l) {
+    @include type-size-leading(14px, 20px);
+  }
+}
+
+@mixin type-intro-body {
+  @include founders-light;
+  @include type-size-leading(16px, 34px);
+
+  @include grid-media($grid-l) {
+    @include type-size-leading(18px, 34px);
+  }
+}
+
+@mixin type-label {
+  @include founders-light;
+  @include type-size-leading(16px, 34px);
+}
+
+@mixin type-title {
+  @include warnock-light;
+  @include type-size-leading(24px, 30px);
+
+  @include grid-media($grid-l) {
+    @include type-size-leading(32px, 40px);
+  }
+}
+
+@mixin type-subtitle {
+  @include warnock-light;
+  @include type-size-leading(18px);
+
+  @include grid-media($grid-l) {
+    @include type-size-leading(24px, 25px);
+  }
+}
+
+@mixin type-project-title {
+  @include warnock-light;
+  @include type-size-leading(28px, 36px);
+
+  @include grid-media($grid-m) {
+    @include type-size-leading(45px, 52px);
+  }
+
+  @include grid-media($grid-l) {
+    @include type-size-leading(52px, 60px);
+    letter-spacing: -.5px;
+  }
+}
+
+@mixin type-project-intro {
+  @include founders-light;
+  @include type-size-leading(18px, 34px);
+
+  @include grid-media($grid-m) {
+    @include type-size-leading(24px, 41px);
+  }
+
+  @include grid-media($grid-l) {
+    @include type-size-leading(28px, 41px);
+  }
+}
+
+@mixin type-nav-name {
+  @include founders-bold;
+  @include type-size-leading(18px);
+
+  @include grid-media($grid-l) {
+    @include type-size-leading(28px, 41px);
+  }
+}
+
+@mixin type-global-links {
+  @include founders;
+  @include type-size-leading(18px);
+
+  @include grid-media($grid-l) {
+    @include type-size-leading(28px, 41px);
+  }
+}
+
+@mixin type-menu-header {
+  @include warnock-bold;
+  @include type-size-leading(40px);
+  letter-spacing: -.7px;
+
+  @include grid-media($grid-m) {
+    @include type-size-leading(60px);
+    letter-spacing: -1px;
+  }
+
+  @include grid-media($grid-l) {
+    @include type-size-leading(88px);
+    letter-spacing: -1.5px;
+  }
+}
+
+@mixin type-copyright {
+  @include founders-bold;
+  @include type-size-leading(22px, 42px);
+
+  @include grid-media($grid-l) {
+    @include type-size-leading(42px);
+  }
+}
+
+@mixin type-home-title {
+  @include warnock-light;
+  @include type-size-leading(24px, 40px);
+}
+
+@mixin type-home-bio {
+  @include warnock-light;
+  @include type-size-leading(28px, 40px);
+
+  @include grid-media($grid-l) {
+    @include type-size-leading(44px, 64px);
+  }
+}
