@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import api from 'lib/api';
 
-import './styles.scss';
+import styles from './styles.scss';
 
 class Home extends Component {
   state = {
@@ -31,8 +31,8 @@ class Home extends Component {
   bio(curation) {
     
     return (
-      <div className="bio">
-        <p className="bioText">
+      <div className={styles.bio}>
+        <p className={styles.bioText}>
           {curation.fields.bio}
         </p>
       </div>
@@ -43,7 +43,7 @@ class Home extends Component {
     const { curation, projects } = this.state;
 
     return (
-      <div className="container">
+      <div className={styles.container}>
         <div>THIS IS THE HOME PAGE</div>
 
         { curation && curation.fields && this.bio(curation) }

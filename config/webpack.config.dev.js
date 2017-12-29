@@ -22,19 +22,6 @@ const publicUrl = '';
 // Get environment variables to inject into our app.
 const env = getClientEnvironment(publicUrl);
 
-
-console.log('#$%^#$%^#%^#^%#^#$%^#$%^#$^#$%^#$^#$')
-console.log('#$%^#$%^#%^#^%#^#$%^#$%^#$^#$%^#$^#$')
-console.log('#$%^#$%^#%^#^%#^#$%^#$%^#$^#$%^#$^#$')
-console.log('#$%^#$%^#%^#^%#^#$%^#$%^#$^#$%^#$^#$')
-console.log('#$%^#$%^#%^#^%#^#$%^#$%^#$^#$%^#$^#$')
-console.log('2: ', paths.neat)
-console.log('#$%^#$%^#%^#^%#^#$%^#$%^#$^#$%^#$^#$')
-console.log('#$%^#$%^#%^#^%#^#$%^#$%^#$^#$%^#$^#$')
-console.log('#$%^#$%^#%^#^%#^#$%^#$%^#$^#$%^#$^#$')
-console.log('#$%^#$%^#%^#^%#^#$%^#$%^#$^#$%^#$^#$')
-console.log('#$%^#$%^#%^#^%#^#$%^#$%^#$^#$%^#$^#$')
-
 // This is the development configuration.
 // It is focused on developer experience and fast rebuilds.
 // The production configuration is different and lives in a separate file.
@@ -177,7 +164,9 @@ module.exports = {
               {
                 loader: require.resolve('css-loader'),
                 options: {
-                  importLoaders: 1,
+                  importLoaders: 2,
+                  modules: true,
+                  localIdentName: '[local]__[hash:base64:5]',
                 },
               },
               {
