@@ -35,7 +35,7 @@ $grid-l: (
 
   @include grid-media($grid-l) {
     @include grid-container;
-    width: rem(1120px);
+    width: rem(1000px);
     margin: 0 auto;
   }
 }

@@ -1,0 +1,21 @@
+@import '~assets/stylesheets/common';
+
+.container {
+  padding: rem(40px 30px);
+
+  @include grid-media($grid-m) {
+    padding: rem(65px 40px);
+  }
+
+  @include grid-media($grid-l) {
+    padding: rem(65px 60px);
+  }
+}
+
+.name {
+  @include type-nav-name;
+
+  a {
+    text-decoration: none;
+  }
+}

@@ -44,8 +44,6 @@ class Home extends Component {
 
     return (
       <div className={styles.container}>
-        <div>THIS IS THE HOME PAGE</div>
-
         { curation && curation.fields && this.bio(curation) }
 
         <ul>
