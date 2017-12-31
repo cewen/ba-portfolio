@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import api from 'lib/api';
 
 import Bio from 'components/Bio';
+import FeaturedProject from 'components/FeaturedProject';
 
 import styles from './styles.scss';
 
@@ -33,9 +34,14 @@ class Home extends Component {
   render() {
     const { curation, projects } = this.state;
 
+    if (!curation || !curation.fields) {
+      return null;
+    }
+
     return (
       <div className={styles.container}>
-        { curation && curation.fields && <Bio text={curation.fields.bio} /> }
+        <Bio text={curation.fields.bio} />
+        <FeaturedProject content={curation.fields.featuredProject} />
 
         <ul>
           {projects.map((project) => {

@@ -1,0 +1,60 @@
+@import '~assets/stylesheets/common';
+
+.container {
+  @include ba-grid-collapse;
+}
+
+.content {
+  @include grid-column(6);
+
+  @include grid-media($grid-m) {
+    @include grid-column(6);
+  }
+
+  @include grid-media($grid-l) {
+    @include grid-column(6);
+  }
+}
+
+.collapser {
+  @include grid-media($grid-m) {
+    @include grid-collapse;
+    display: flex;
+    align-items: center;
+  }
+
+  @include grid-media($grid-l) {
+    @include grid-collapse;
+  }
+}
+
+.picture {
+  margin-bottom: rem(10px);
+
+  @include grid-media($grid-m) {
+    @include grid-column(4);
+  }
+
+  @include grid-media($grid-l) {
+    @include grid-column(4);
+  }
+}
+
+.info {
+  @include grid-media($grid-m) {
+    @include grid-column(2);
+  }
+
+  @include grid-media($grid-l) {
+    @include grid-column(2);
+  }
+}
+
+.title {
+  @include type-title;
+}
+
+.details {
+  @include type-label;
+  color: $warm-gray;
+}

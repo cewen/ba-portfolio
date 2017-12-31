@@ -1,8 +1,8 @@
 import { createClient } from 'contentful'
 
 const api = createClient({
-  space: 'zn00sf2j0pmu',
-  accessToken: '62aa2f5de47d2d959911644eb1045cce76d1e57031f112e73b46a15b448dccd3'
+  space: `${process.env.REACT_APP_SPACE_ID}`,
+  accessToken: `${process.env.REACT_APP_API_ACCESS_TOKEN}`,
 });
 
 export default api;
