@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 import api from 'lib/api';
 
+import Bio from 'components/Bio';
+
 import styles from './styles.scss';
 
 class Home extends Component {
@@ -28,23 +30,12 @@ class Home extends Component {
     });
   }
 
-  bio(curation) {
-    
-    return (
-      <div className={styles.bio}>
-        <p className={styles.bioText}>
-          {curation.fields.bio}
-        </p>
-      </div>
-    );
-  }
-
   render() {
     const { curation, projects } = this.state;
 
     return (
       <div className={styles.container}>
-        { curation && curation.fields && this.bio(curation) }
+        { curation && curation.fields && <Bio text={curation.fields.bio} /> }
 
         <ul>
           {projects.map((project) => {

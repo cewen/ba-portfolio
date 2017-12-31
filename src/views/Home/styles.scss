@@ -3,23 +3,3 @@
 .container {
   @include ba-grid-container;
 }
-
-.bio {
-  @include ba-grid-collapse;
-}
-
-.bioText {
-  @include type-home-bio;
-  @include grid-column(6);
-
-  @include grid-media($grid-m) {
-    @include grid-column(6);
-  }
-
-  @include grid-media($grid-l) {
-    @include grid-column(5);
-    @include grid-push(1);
-    position: relative;
-    left: rem(-40px);
-  }
-}
