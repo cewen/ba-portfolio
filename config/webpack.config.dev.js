@@ -192,7 +192,7 @@ module.exports = {
               {
                 loader: 'sass-loader',
                 options: {
-                  includePaths: [path.resolve(__dirname, '/Users/chrisewen/Sites/ba-portfolio/node_modules/bourbon-neat/core')]
+                  includePaths: paths.neat,
                 },
               },
             ],
