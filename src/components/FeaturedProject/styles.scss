@@ -2,6 +2,16 @@
 
 .container {
   @include ba-grid-collapse;
+  float: left;
+  margin-bottom: rem(70px);
+
+  @include grid-media($grid-m) {
+    margin-bottom: rem(80px);
+  }
+
+  @include grid-media($grid-l) {
+    margin-bottom: rem(160px);
+  }
 }
 
 .content {
@@ -29,10 +39,12 @@
 }
 
 .picture {
-  margin-bottom: rem(10px);
+  margin: rem(0 -30px 10px);
 
   @include grid-media($grid-m) {
     @include grid-column(4);
+    margin-right: 0;
+    margin-bottom: 0;
   }
 
   @include grid-media($grid-l) {

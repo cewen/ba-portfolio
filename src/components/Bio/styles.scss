@@ -2,6 +2,16 @@
 
 .bio {
   @include ba-grid-collapse;
+  float: left;
+  margin-bottom: rem(60px);
+
+  @include grid-media($grid-m) {
+    margin-bottom: rem(105px);
+  }
+
+  @include grid-media($grid-l) {
+    margin-bottom: rem(185px);
+  }
 }
 
 .bioText {

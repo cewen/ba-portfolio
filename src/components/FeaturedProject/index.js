@@ -7,7 +7,6 @@ import styles from './styles.scss';
 
 class FeaturedProject extends Component {
   render() {
-    console.log(this.props.content)
     const { content } = this.props;
 
     return (

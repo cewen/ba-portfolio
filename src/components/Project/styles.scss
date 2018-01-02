@@ -1,0 +1,30 @@
+@import '~assets/stylesheets/common';
+
+.container {
+  flex-basis: 100%;
+  flex-shrink: 0;
+  flex-grow: 0;
+  margin-bottom: rem(70px);
+  padding-left: rem(30px);
+  padding-right: rem(30px);
+
+  @include grid-media($grid-m) {
+    flex-basis: rem(295px);
+    margin-bottom: rem(110px);
+    padding: 0;
+  }
+
+  @include grid-media($grid-l) {
+    flex-basis: rem(460px);
+    margin-bottom: rem(150px);
+  }
+}
+
+.title {
+  @include type-title;
+}
+
+.details {
+  @include type-label;
+  color: $warm-gray;
+}

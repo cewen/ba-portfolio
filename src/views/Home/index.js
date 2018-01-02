@@ -4,6 +4,7 @@ import api from 'lib/api';
 
 import Bio from 'components/Bio';
 import FeaturedProject from 'components/FeaturedProject';
+import Project from 'components/Project';
 
 import styles from './styles.scss';
 
@@ -43,11 +44,21 @@ class Home extends Component {
         <Bio text={curation.fields.bio} />
         <FeaturedProject content={curation.fields.featuredProject} />
 
-        <ul>
+        <div className={styles.projects}>
           {projects.map((project) => {
-            return <li key={project.sys.id}>{project.fields.title}</li>;
+            return (
+              <Project
+                content={project}
+                key={project.sys.id}
+                sizes={{
+                  s: { width: 460 },
+                  m: { width: 295 },
+                  l: { width: 460 },
+                }}
+              />
+            );
           })}
-        </ul>
+        </div>
       </div>
     );
   }
