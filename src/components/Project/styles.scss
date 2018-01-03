@@ -20,6 +20,10 @@
   }
 }
 
+.picture {
+  margin-bottom: rem(10px);
+}
+
 .title {
   @include type-title;
 }

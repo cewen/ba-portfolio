@@ -1,0 +1,24 @@
+@import '~assets/stylesheets/common';
+
+.container {
+  display: flex;
+  padding: rem(0 30px 30px);
+  justify-content: space-between;
+  align-items: center;
+
+  @include grid-media($grid-m) {
+    padding: rem(0 40px 55px);
+  }
+
+  @include grid-media($grid-l) {
+    padding: rem(0 60px 80px);
+  }
+}
+
+.link {
+  @include type-global-links;
+}
+
+.copyright {
+  @include type-copyright;
+}

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 
 import Nav from './components/Nav';
+import Footer from './components/Footer';
 import Home from './views/Home';
 import Project from './views/Project';
 import GridGuides from './components/GridGuides';
@@ -16,6 +17,7 @@ class App extends Component {
         <Route exact path="/" component={Home} />
         <Route path="/project" component={Project} />
         <GridGuides />
+        <Footer />
       </div>
     );
   }
