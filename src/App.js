@@ -15,7 +15,7 @@ class App extends Component {
       <div>
         <Nav />
         <Route exact path="/" component={Home} />
-        <Route path="/project" component={Project} />
+        <Route path="/:slug" component={Project} />
         <GridGuides />
         <Footer />
       </div>
