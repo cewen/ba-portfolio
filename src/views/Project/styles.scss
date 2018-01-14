@@ -1,1 +1,151 @@
 @import '~assets/stylesheets/common';
+
+.container {
+  padding-top: rem(60px);
+}
+
+.header {
+  @include ba-grid-container;
+  margin-bottom: rem(60px);
+
+  @include grid-media($grid-m) {
+    margin-bottom: rem(120px);
+  }
+
+  @include grid-media($grid-l) {
+    margin-bottom: rem(180px);
+  }
+}
+
+.collapser {
+  @include ba-grid-collapse;
+}
+
+.title {
+  @include grid-column(6);
+  @include type-project-title;
+
+  @include grid-media($grid-m) {
+    @include grid-column(6);
+  }
+
+  @include grid-media($grid-l) {
+    @include grid-column(6);
+    padding: rem(0 115px 0 140px);
+  }
+}
+
+.intro {
+  @include grid-column(6);
+  @include type-project-intro;
+  margin-bottom: 0;
+
+  @include grid-media($grid-m) {
+    @include grid-column(6);
+  }
+
+  @include grid-media($grid-l) {
+    @include grid-column(6);
+    padding: rem(0 115px 0 140px);
+  }
+}
+
+.hero {
+  margin-bottom: rem(70px);
+}
+
+.info {
+  @include ba-grid-container;
+  margin-bottom: rem(60px);
+
+  @include grid-media($grid-m) {
+    margin-bottom: rem(120px);
+  }
+
+  @include grid-media($grid-l) {
+    margin-bottom: rem(180px);
+  }
+}
+
+.infoCollapser {
+  @include grid-media($grid-l) {
+    display: flex;
+    align-items: flex-start;
+  }
+}
+
+.subheader {
+  @include grid-column(6);
+  margin-bottom: rem(35px);
+
+  @include grid-media($grid-m) {
+    @include grid-column(6);
+    margin-bottom: rem(65px);
+  }
+
+  @include grid-media($grid-l) {
+    @include grid-column(4);
+    margin-bottom: 0;
+    order: 2;
+  }
+}
+
+.subtitle {
+  @include type-title;
+  margin-bottom: rem(15px);
+
+  @include grid-media($grid-m) {
+    margin-bottom: rem(25px);
+  }
+
+  @include grid-media($grid-l) {
+    
+  }
+}
+
+.description {
+  @include type-body;
+  margin: 0;
+}
+
+.metadatas {
+  @include grid-column(6);
+  display: flex;
+  flex-wrap: wrap;
+
+  @include grid-media($grid-m) {
+    @include grid-column(6);
+  }
+
+  @include grid-media($grid-l) {
+    @include grid-column(2);
+    order: 1;
+  }
+}
+
+.metadata {
+  flex: 0 0 50%;
+
+  @include grid-media($grid-m) {
+    flex: 0 0 percentage(1/3);
+  }
+
+  @include grid-media($grid-l) {
+    flex: 0 0 100%;
+  }
+}
+
+.metadataTitle {
+  @include type-credit-header;
+  color: $warm-gray;
+  margin: 0;
+}
+
+.metadataItems {
+  padding: 0;
+  margin-top: 0;
+}
+
+.metadataItem {
+  @include type-credit-body;
+}
