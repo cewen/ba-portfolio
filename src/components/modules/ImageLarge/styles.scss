@@ -1,0 +1,12 @@
+@import '~assets/stylesheets/common';
+
+.container {
+  @include grid-media($grid-m) {
+    width: rem(640px);
+    margin: 0 auto;
+  }
+
+  @include grid-media($grid-l) {
+    width: rem(1000px);
+  }
+}

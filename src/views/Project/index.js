@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import api from 'lib/api';
 
 import Picture from 'components/Picture';
+import getModule from 'views/Project/getModule';
 
 import styles from './styles.scss';
 
@@ -44,9 +45,9 @@ class Project extends Component {
           className={styles.hero}
           asset={project.fields.hero}
           sizes={{
-            s: { width: 720, height: 430 },
-            m: { width: 1120, height: 720 },
-            l: { width: 1200, height: 720 },
+            s: { width: 720 },
+            m: { width: 1120 },
+            l: { width: 1200 },
           }}
         />
 
@@ -85,6 +86,8 @@ class Project extends Component {
             </div>
           </div>
         </div>
+
+        {project.fields.modules.map(getModule)}
       </section>
     );
   }
