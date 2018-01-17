@@ -30,12 +30,12 @@ class Picture extends Component {
   }
 
   render() {
-    const { alt, className } = this.props;
+    const { alt, className, sizes } = this.props;
 
     return (
       <picture className={className}>
-        {this.srcSet('l')}
-        {this.srcSet('m')}
+        {sizes.l && this.srcSet('l')}
+        {sizes.m && this.srcSet('m')}
         <img src={this.src('s')} alt={alt} />
       </picture>
     )

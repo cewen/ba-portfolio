@@ -1,12 +1,15 @@
 @import '~assets/stylesheets/common';
 
 .container {
+  margin-bottom: rem(80px);
+
   @include grid-media($grid-m) {
     width: rem(640px);
-    margin: 0 auto;
+    margin: 0 auto rem(120px);
   }
 
   @include grid-media($grid-l) {
     width: rem(1000px);
+    margin-bottom: rem(180px);
   }
 }

@@ -22,7 +22,7 @@ class ImageLarge extends Component {
           sizes={{
             s: { width: 720 },
             m: { width: 640 },
-            l: { width: 1000},
+            l: { width: 1000 },
           }}
         />
       </section>

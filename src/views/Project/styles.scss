@@ -97,10 +97,6 @@
   @include grid-media($grid-m) {
     margin-bottom: rem(25px);
   }
-
-  @include grid-media($grid-l) {
-    
-  }
 }
 
 .description {
