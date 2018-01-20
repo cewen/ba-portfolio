@@ -1,0 +1,149 @@
+@import '~assets/stylesheets/common';
+
+.container {
+  margin-bottom: rem(80px) !important;
+
+  @include grid-media($grid-m) {
+    margin-bottom: rem(120px) !important;
+  }
+
+  @include grid-media($grid-l) {
+    margin-bottom: rem(180px) !important;
+  }
+}
+
+.container.small,
+.container.medium {
+  @include ba-grid-container;
+
+  .content {
+    @include ba-grid-collapse;
+  }
+
+  .picture {
+    @include grid-column(6);
+  }
+}
+
+.container.small {
+  .picture {
+    @include grid-media($grid-m) {
+      @include grid-column(4);
+      @include grid-push(1);
+    }
+
+    @include grid-media($grid-l) {
+      @include grid-column(3);
+      @include grid-push(1.5);
+    }
+  }
+
+  &.left {
+    .picture {
+      @include grid-media($grid-l) {
+        @include grid-push(0);
+      }
+    }
+  }
+
+  &.right {
+    .picture {
+      @include grid-media($grid-l) {
+        @include grid-push(3);
+      }
+    }
+  }
+}
+
+.container.medium {
+  .picture {
+    @include grid-media($grid-m) {
+      @include grid-column(6);
+    }
+
+    @include grid-media($grid-l) {
+      @include grid-column(4);
+      @include grid-push(1);
+    }
+  }
+
+  &.left {
+    .picture {
+      @include grid-media($grid-l) {
+        @include grid-push(0);
+      }
+    }
+  }
+
+  &.right {
+    .picture {
+      @include grid-media($grid-l) {
+        @include grid-push(2);
+      }
+    }
+  }
+}
+
+.container.large,
+.container.big {
+  @include grid-media($grid-m) {
+    @include grid-container;
+    width: rem(640px);
+    margin: 0 auto;
+  }
+
+  @include grid-media($grid-l) {
+    @include grid-container;
+    width: rem(1000px);
+    margin: 0 auto;
+  }
+
+  .content {
+    @include grid-media($grid-m) {
+      @include grid-collapse;
+    }
+
+    @include grid-media($grid-l) {
+      @include grid-collapse;
+    }
+  }
+
+  .picture {
+    @include grid-media($grid-m) {
+      @include grid-column(6);
+    }
+  }
+}
+
+.container.large {
+  .picture {
+    @include grid-media($grid-l) {
+      @include grid-column(6);
+    }
+  }
+}
+
+.container.big {
+  .picture {
+    @include grid-media($grid-l) {
+      @include grid-column(5);
+      @include grid-push(.5);
+    }
+  }
+
+  &.left {
+    .picture {
+      @include grid-media($grid-l) {
+        @include grid-push(0);
+      }
+    }
+  }
+
+  &.right {
+    .picture {
+      @include grid-media($grid-l) {
+        @include grid-push(1);
+      }
+    }
+  }
+}

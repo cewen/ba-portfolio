@@ -1,6 +1,6 @@
 import React from 'react';
 
-import ImageLarge from 'components/modules/ImageLarge';
+import Image from 'components/modules/Image';
 import ImageFull from 'components/modules/ImageFull';
 import Section from 'components/modules/Section';
 
@@ -11,7 +11,10 @@ export default module => {
   console.log(type)
   switch (type) {
     case 'img-large':
-      return <ImageLarge key={id} content={module} />;
+    case 'img-small':
+    case 'img-medium':
+    case 'img-big':
+      return <Image key={id} content={module} />;
 
     case 'img-full':
       return <ImageFull key={id} content={module} />;
