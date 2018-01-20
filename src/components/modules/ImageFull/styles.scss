@@ -1,0 +1,13 @@
+@import '~assets/stylesheets/common';
+
+.container {
+  margin-bottom: rem(80px);
+
+  @include grid-media($grid-m) {
+    margin-bottom: rem(120px);
+  }
+
+  @include grid-media($grid-l) {
+    margin-bottom: rem(180px);
+  }
+}
