@@ -2,6 +2,8 @@ import React from 'react';
 
 import Image from 'components/modules/Image';
 import ImageFull from 'components/modules/ImageFull';
+import ImageTwoColumn from 'components/modules/ImageTwoColumn';
+import ImageThreeColumn from 'components/modules/ImageThreeColumn';
 import Section from 'components/modules/Section';
 
 export default module => {
@@ -18,6 +20,12 @@ export default module => {
 
     case 'img-full':
       return <ImageFull key={id} content={module} />;
+
+    case 'img-2col':
+      return <ImageTwoColumn key={id} content={module} />;
+
+    case 'img-3col':
+      return <ImageThreeColumn key={id} content={module} />;
 
     case 'section':
       return <Section key={id} content={module} />;

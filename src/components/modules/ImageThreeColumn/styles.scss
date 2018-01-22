@@ -1,0 +1,63 @@
+@import '~assets/stylesheets/common';
+
+.container {
+  @include ba-grid-container;
+  margin-bottom: rem(80px);
+
+  @include grid-media($grid-m) {
+    margin-bottom: rem(120px);
+  }
+
+  @include grid-media($grid-l) {
+    margin-bottom: rem(180px);
+  }
+}
+
+.content {
+  @include ba-grid-collapse;
+
+  @include grid-media($grid-m) {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  @include grid-media($grid-l) {
+    display: block;
+  }
+}
+
+.picture {
+  @include grid-column(6);
+  margin-bottom: rem(80px);
+
+  @include grid-media($grid-m) {
+    @include grid-column(3);
+    margin-bottom: rem(120px);
+    flex: 0 0 rem(295px);
+  }
+
+  @include grid-media($grid-l) {
+    @include grid-column(2);
+    margin-bottom: 0;
+  }
+
+  &:nth-child(2) {
+    @include grid-media($grid-m) {
+      margin-bottom: 0;
+    }
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+
+    @include grid-media($grid-m) {
+      margin-left: 0;
+    }
+
+    @include grid-media($grid-l) {
+      @include grid-column(2);
+    }
+  }
+}

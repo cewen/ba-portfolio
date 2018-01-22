@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import CustomPropTypes from 'lib/CustomPropTypes';
+import BTE from 'lib/BTE';
 
 const SIZE_MAP = {
   s: 320,
@@ -9,6 +10,10 @@ const SIZE_MAP = {
 };
 
 class Picture extends Component {
+  imageLoaded() {
+     BTE.oneImageLoaded();
+  }
+
   srcSet(size) {
     const src = this.src(size);
     const media = `(min-width: ${SIZE_MAP[size]}px)`;
@@ -33,10 +38,10 @@ class Picture extends Component {
     const { alt, className, sizes } = this.props;
 
     return (
-      <picture className={className}>
+      <picture className={className} ref={el => this.el = el}>
         {sizes.l && this.srcSet('l')}
         {sizes.m && this.srcSet('m')}
-        <img src={this.src('s')} alt={alt} />
+        <img src={this.src('s')} onLoad={this.imageLoaded} alt={alt} />
       </picture>
     )
   }
