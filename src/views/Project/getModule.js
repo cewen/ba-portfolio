@@ -5,6 +5,7 @@ import ImageFull from 'components/modules/ImageFull';
 import ImageTwoColumn from 'components/modules/ImageTwoColumn';
 import ImageThreeColumn from 'components/modules/ImageThreeColumn';
 import Section from 'components/modules/Section';
+import TextBreak from 'components/modules/TextBreak';
 
 export default module => {
   const { type } = module.fields;
@@ -29,6 +30,9 @@ export default module => {
 
     case 'section':
       return <Section key={id} content={module} />;
+
+    case 'text-break':
+      return <TextBreak key={id} content={module} />;
 
     default:
       return null;

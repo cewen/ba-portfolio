@@ -1,0 +1,60 @@
+@import '~assets/stylesheets/common';
+
+.container {
+  @include ba-grid-container;
+  margin-bottom: rem(80px);
+
+  @include grid-media($grid-m) {
+    margin-bottom: rem(120px);
+  }
+
+  @include grid-media($grid-l) {
+    margin-bottom: rem(180px);
+  }
+}
+
+.content {
+  @include ba-grid-collapse;
+}
+
+.info {
+  @include grid-column(6);
+
+  @include grid-media($grid-m) {
+    @include grid-column(6);
+  }
+
+  @include grid-media($grid-l) {
+    @include grid-column(6);
+  }
+}
+
+.title {
+  @include type-title;
+  @include grid-column(6);
+  margin-bottom: rem(25px);
+
+  @include grid-media($grid-m) {
+    @include grid-column(6);
+    margin-bottom: rem(35px);
+  }
+
+  @include grid-media($grid-l) {
+    @include grid-column(4);
+    @include grid-push(1);
+  }
+}
+
+.description {
+  @include type-body;
+  @include grid-column(6);
+
+  @include grid-media($grid-m) {
+    @include grid-column(6);
+  }
+
+  @include grid-media($grid-l) {
+    @include grid-column(4);
+    @include grid-push(1);
+  }
+}
