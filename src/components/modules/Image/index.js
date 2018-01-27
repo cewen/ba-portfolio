@@ -40,6 +40,9 @@ class Image extends Component {
           m: { width: 640 },
           l: { width: 820 },
         };
+
+      default:
+        return null;
     }
   }
 

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import classNames from 'classnames';
 
 import api from 'lib/api';
@@ -10,40 +11,59 @@ import styles from './styles.scss';
 
 class Project extends Component {
   state = {
-    project: {}
-  }
+    project: {},
+    nextProject: {},
+  };
+
+  getData(slug) {
+    api.getEntries({ 'content_type': 'project' }).then((response) => {
+      const { items } = response;
+      const [project] = items.filter(item => item.fields.slug === slug);
+      const nextProjectIndex = (items.indexOf(project) + 1) % items.length;
+      const nextProject = items[nextProjectIndex];
+
+      this.setState((prevState, props) => {
+        return {
+          project,
+          nextProject,
+        };
+      });
+    });
+  };
 
   componentDidMount() {
     const { slug } = this.props.match.params;
 
-    api.getEntries({
-      'content_type': 'project',
-      'fields.slug': slug
-    }).then((entry) => {
-      console.log(entry.items[0])
-      this.setState({ project: entry.items[0]})
-    });
+    this.getData(slug);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    const { slug } = nextProps.match.params;
+
+    this.getData(slug);
   }
 
   render() {
-    const { project } = this.state;
+    const { project, nextProject } = this.state;
 
     if (!project || !project.fields) {
       return null;
     }
 
+    const { fields } = project;
+
     return (
       <section className={styles.container}>
         <header className={styles.header}>
           <div className={styles.collapser}>
-            <h1 className={styles.title}>{project.fields.title}</h1>
-            <p className={styles.intro}>{project.fields.intro}</p>
+            <h1 className={styles.title}>{fields.title}</h1>
+            <p className={styles.intro}>{fields.intro}</p>
           </div>
         </header>
 
         <Picture
           className={styles.hero}
-          asset={project.fields.hero}
+          asset={fields.hero}
           sizes={{
             s: { width: 720 },
             m: { width: 1120 },
@@ -55,39 +75,52 @@ class Project extends Component {
           <div className={classNames(styles.collapser, styles.infoCollapser)}>
             <div className={styles.subheader}>
               <h2 className={styles.subtitle}>
-                {project.fields.descriptionHeader}
+                {fields.descriptionHeader}
               </h2>
               <p className={styles.description}>
-                {project.fields.descriptionBody}
+                {fields.descriptionBody}
               </p>
             </div>
 
             <div className={styles.metadatas}>
-              <div className={styles.metadata}>
-                <p className={styles.metadataTitle}>Completed At:</p>
-                <ul className={styles.metadataItems}>
-                  {project.fields.credits.map((credit, i) => <li key={i} className={styles.metadataItem}>{credit}</li>)}
-                </ul>
-              </div>
+              {fields.credits &&
+                <div className={styles.metadata}>
+                  <p className={styles.metadataTitle}>Completed At:</p>
+                  <ul className={styles.metadataItems}>
+                    {fields.credits.map((credit, i) => <li key={i} className={styles.metadataItem}>{credit}</li>)}
+                  </ul>
+                </div>
+              }
 
-              <div className={styles.metadata}>
-                <p className={styles.metadataTitle}>Roles:</p>
-                <ul className={styles.metadataItems}>
-                  {project.fields.roles.map((role, i) => <li key={i} className={styles.metadataItem}>{role}</li>)}
-                </ul>
-              </div>
+              {fields.roles &&
+                <div className={styles.metadata}>
+                  <p className={styles.metadataTitle}>Roles:</p>
+                  <ul className={styles.metadataItems}>
+                    {fields.roles.map((role, i) => <li key={i} className={styles.metadataItem}>{role}</li>)}
+                  </ul>
+                </div>
+              }
 
-              <div className={styles.metadata}>
-                <p className={styles.metadataTitle}>Honors:</p>
-                <ul className={styles.metadataItems}>
-                  {project.fields.honors.map((honor, i) => <li key={i} className={styles.metadataItem}>{honor}</li>)}
-                </ul>
-              </div>
+              {fields.honors &&
+                <div className={styles.metadata}>
+                  <p className={styles.metadataTitle}>Honors:</p>
+                  <ul className={styles.metadataItems}>
+                    {fields.honors.map((honor, i) => <li key={i} className={styles.metadataItem}>{honor}</li>)}
+                  </ul>
+                </div>
+              }
             </div>
           </div>
         </div>
 
-        {project.fields.modules.map(getModule)}
+        {fields.modules && fields.modules.map(getModule)}
+
+        <div className={styles.next}>
+          <div className={styles.nextContent}>
+            <span className={styles.nextHeader}>Next project</span>
+            <Link to={`/${nextProject.fields.slug}`} className={styles.nextLink}>{nextProject.fields.title}</Link>
+          </div>
+        </div>
       </section>
     );
   }

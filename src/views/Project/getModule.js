@@ -11,7 +11,6 @@ export default module => {
   const { type } = module.fields;
   const { id } = module.sys;
 
-  console.log(type)
   switch (type) {
     case 'img-large':
     case 'img-small':

@@ -145,3 +145,46 @@
 .metadataItem {
   @include type-credit-body;
 }
+
+.next {
+  @include ba-grid-container;
+  margin-bottom: rem(80px);
+
+  @include grid-media($grid-m) {
+    margin-bottom: rem(120px);
+  }
+
+  @include grid-media($grid-l) {
+    margin-bottom: rem(180px);
+  }
+}
+
+.nextContent {
+  @include ba-grid-collapse;
+}
+
+.nextHeader {
+  @include type-credit-header;
+  @include grid-column(6);
+
+  @include grid-media($grid-m) {
+    @include grid-column(6);
+  }
+
+  @include grid-media($grid-l) {
+    @include grid-column(6);
+  }
+}
+
+.nextLink {
+  @include type-title;
+  @include grid-column(6);
+
+  @include grid-media($grid-m) {
+    @include grid-column(6);
+  }
+
+  @include grid-media($grid-l) {
+    @include grid-column(6);
+  }
+}

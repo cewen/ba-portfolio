@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import { Route } from 'react-router-dom';
 
 import Nav from './components/Nav';
@@ -10,6 +11,10 @@ import GridGuides from './components/GridGuides';
 import './App.scss';
 
 class App extends Component {
+  componentDidUpdate() {
+    ReactDOM.findDOMNode(this).scrollIntoView()
+  }
+
   render() {
     return (
       <div>

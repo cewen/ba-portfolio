@@ -20,11 +20,12 @@ class ImageThreeColumn extends Component {
   getHeight() {
     const breakpoints = BTE.getBreakpoints();
 
-    console.log(breakpoints.m, this.imageOne.el.offsetHeight, this.imageTwo.el.offsetHeight, this.content)
+    if (!this.imageOne || !this.imageTwo) {
+      return;
+    }
 
     if (breakpoints.m) {
-      console.log(this.imageOne, this.imageTwo)
-      const height = this.imageOne.el.offsetHeight + this.imageOne.el.offsetHeight + 120;
+      const height = this.imageOne.el.offsetHeight + this.imageTwo.el.offsetHeight + 120;
       this.setState({ contentHeight: height });
     } else {
       this.setState({ contentHeight: '' });
@@ -34,8 +35,13 @@ class ImageThreeColumn extends Component {
   componentDidMount() {
     BTE.monitorImagesLoad();
     BTE.monitorResize();
-    BTE.on('imagesLoaded', this.getHeight.bind(this))
-    BTE.on('resize', this.getHeight.bind(this))
+    BTE.on('imagesLoaded', this.getHeight.bind(this));
+    BTE.on('resize', this.getHeight.bind(this));
+  }
+
+  componentWillUnmount() {
+    BTE.remove('imagesLoaded', this.getHeight.bind(this));
+    BTE.remove('resize', this.getHeight.bind(this));
   }
 
   render() {
