@@ -6,6 +6,7 @@ import CustomPropTypes from 'lib/CustomPropTypes';
 
 import Picture from 'components/Picture';
 
+import arrow from 'assets/images/arrow-white-icon.svg';
 import styles from './styles.scss';
 
 class Index extends Component {
@@ -50,7 +51,7 @@ class Index extends Component {
         <div className={styles.collapse}>
           <div className={styles.content}>
             <h1 className={styles.header}>
-              Project Index
+              <img src={arrow} className={styles.arrow} />Project Index
             </h1>
             { projects.map(this.project) }
           </div>

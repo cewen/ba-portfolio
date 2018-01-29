@@ -29,11 +29,31 @@
 
 .header {
   @include type-menu-header;
+  display: flex;
+  align-items: center;
   flex: 0 0 100%;
   text-stroke: .5px $white;
   -webkit-text-stroke: .5px $white;
   color: $black;
   margin-bottom: rem(80px);
+}
+
+.arrow {
+  width: rem(12px);
+  height: rem(24px);
+  margin-right: rem(20px);
+  margin-bottom: rem(5px);
+
+  @include grid-media($grid-m) {
+    width: rem(16px);
+    height: rem(32px);
+    margin-right: rem(40px);
+  }
+
+  @include grid-media($grid-l) {
+    margin-right: rem(80px);
+    margin-left: rem(40px);
+  }
 }
 
 .project {

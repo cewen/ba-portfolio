@@ -29,8 +29,19 @@
 
 .copyright {
   @include type-copyright;
+  display: flex;
+  align-items: center;
 
   .black & {
     color: $white;
+  }
+}
+
+.infinity {
+  width: rem(22px);
+  margin-left: rem(8px);
+
+  @include grid-media($grid-m) {
+    width: rem(41px);
   }
 }

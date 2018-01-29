@@ -29,3 +29,20 @@
     left: rem(-40px);
   }
 }
+
+.arrow {
+  display: block;
+  width: rem(12px);
+  margin-top: rem(30px);
+
+  @include grid-media($grid-m) {
+    width: rem(16px);
+  }
+
+  @include grid-media($grid-l) {
+    position: absolute;
+    top: 0;
+    left: rem(-100px);
+    margin-top: rem(12px);
+  }
+}
