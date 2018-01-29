@@ -13,12 +13,24 @@
   @include grid-media($grid-l) {
     padding: rem(0 60px 80px);
   }
+
+  &.black {
+    color: $white;
+  }
 }
 
 .link {
   @include type-global-links;
+
+  .black & {
+    color: $white;
+  }
 }
 
 .copyright {
   @include type-copyright;
+
+  .black & {
+    color: $white;
+  }
 }

@@ -1,0 +1,70 @@
+@import '~assets/stylesheets/common';
+
+.container {
+  @include ba-grid-container;
+}
+
+.collapse {
+  @include ba-grid-collapse;
+}
+
+.content {
+  @include grid-column(6);
+  padding: rem(40px 0 90px);
+  color: $white;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+
+  @include grid-media($grid-m) {
+    @include grid-column(6);
+    padding: rem(65px 0 200px);
+  }
+
+  @include grid-media($grid-l) {
+    @include grid-column(6);
+  }
+}
+
+.header {
+  @include type-menu-header;
+  flex: 0 0 100%;
+  text-stroke: .5px $white;
+  -webkit-text-stroke: .5px $white;
+  color: $black;
+  margin-bottom: rem(80px);
+}
+
+.project {
+  flex: 0 0 calc(50% - 1vw);
+  margin-bottom: rem(80px);
+
+  @include grid-media($grid-m) {
+    flex-basis: calc(33.333% - (100px / 3));
+    margin-bottom: rem(140px);
+  }
+
+  @include grid-media($grid-l) {
+    flex-basis: calc(33.333% - (160px / 3));
+    margin-bottom: rem(180px);
+  }
+}
+
+.picture {
+  margin-bottom: rem(10px);
+  display: block;
+}
+
+.title {
+  @include type-subtitle;
+
+  a {
+    color: $white;
+  }
+}
+
+.info {
+  @include type-label;
+  color: $warm-gray;
+}

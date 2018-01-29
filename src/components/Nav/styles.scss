@@ -2,6 +2,8 @@
 
 .container {
   padding: rem(40px 30px);
+  display: flex;
+  justify-content: space-between;
 
   @include grid-media($grid-m) {
     padding: rem(65px 40px);
@@ -10,12 +12,22 @@
   @include grid-media($grid-l) {
     padding: rem(65px 60px);
   }
+
+  &.black {
+    color: $white;
+  }
 }
 
 .name {
   @include type-nav-name;
+  text-decoration: none;
 
-  a {
-    text-decoration: none;
+  .black & {
+    color: $white;
   }
+}
+
+.index {
+  @include type-global-links;
+  cursor: pointer;
 }

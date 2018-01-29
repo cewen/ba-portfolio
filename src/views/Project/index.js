@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import classNames from 'classnames';
+import PropTypes from 'prop-types';
 
-import api from 'lib/api';
+import CustomPropTypes from 'lib/CustomPropTypes';
 
 import Picture from 'components/Picture';
 import getModule from 'views/Project/getModule';
@@ -10,24 +11,26 @@ import getModule from 'views/Project/getModule';
 import styles from './styles.scss';
 
 class Project extends Component {
+  static propTypes = {
+    projects: PropTypes.arrayOf(CustomPropTypes.project).isRequired,
+  };
+
   state = {
     project: {},
     nextProject: {},
   };
 
   getData(slug) {
-    api.getEntries({ 'content_type': 'project' }).then((response) => {
-      const { items } = response;
-      const [project] = items.filter(item => item.fields.slug === slug);
-      const nextProjectIndex = (items.indexOf(project) + 1) % items.length;
-      const nextProject = items[nextProjectIndex];
+    const { projects } = this.props;
+    const [project] = projects.filter(item => item.fields.slug === slug);
+    const nextProjectIndex = (projects.indexOf(project) + 1) % projects.length;
+    const nextProject = projects[nextProjectIndex];
 
-      this.setState((prevState, props) => {
-        return {
-          project,
-          nextProject,
-        };
-      });
+    this.setState((prevState, props) => {
+      return {
+        project,
+        nextProject,
+      };
     });
   };
 

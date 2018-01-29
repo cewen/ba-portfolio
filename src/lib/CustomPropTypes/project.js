@@ -11,6 +11,7 @@ export default PropTypes.shape({
     honors: PropTypes.arrayOf(PropTypes.string),
     intro: PropTypes.string,
     roles: PropTypes.arrayOf(PropTypes.string),
+    slug: PropTypes.string,
     thumbnail: asset,
     title: PropTypes.string,
     year: PropTypes.string

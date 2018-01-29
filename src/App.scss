@@ -1,1 +1,9 @@
 @import '~assets/stylesheets/common';
+
+.black {
+  background: $black;
+}
+
+.content {
+  min-height: 100vh;
+}

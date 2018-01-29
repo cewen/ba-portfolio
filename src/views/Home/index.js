@@ -11,7 +11,6 @@ import styles from './styles.scss';
 class Home extends Component {
   state = {
     curation: {},
-    projects: []
   };
 
   componentDidMount() {
@@ -23,17 +22,11 @@ class Home extends Component {
         return { curation: page };
       })
     });
-
-    // Get list of Projects
-    api.getEntries({ 'content_type': 'project' }).then((response) => {
-      this.setState((prevState, props) => {
-        return { projects: response.items };
-      })
-    });
   }
 
   render() {
-    const { curation, projects } = this.state;
+    const { curation } = this.state;
+    const { projects } = this.props;
 
     if (!curation || !curation.fields) {
       return null;
