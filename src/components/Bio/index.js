@@ -16,7 +16,7 @@ class Bio extends Component {
       <div className={styles.bio}>
         <p className={styles.bioText}>
           {text}
-          <img src={arrow} className={styles.arrow} />
+          <img src={arrow} className={styles.arrow} alt="" />
         </p>
       </div>
     );

@@ -32,13 +32,15 @@ class Home extends Component {
       return null;
     }
 
+    const { featuredProject } = curation.fields;
+
     return (
       <div className={styles.container}>
         <Bio text={curation.fields.bio} />
-        <FeaturedProject content={curation.fields.featuredProject} />
+        <FeaturedProject content={featuredProject} />
 
         <div className={styles.projects}>
-          {projects.map((project) => {
+          {projects.filter(project => project.sys.id !== featuredProject.sys.id).map(project => {
             return (
               <Project
                 content={project}

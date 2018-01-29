@@ -51,7 +51,7 @@ class Index extends Component {
         <div className={styles.collapse}>
           <div className={styles.content}>
             <h1 className={styles.header}>
-              <img src={arrow} className={styles.arrow} />Project Index
+              <img src={arrow} className={styles.arrow} alt="" />Project Index
             </h1>
             { projects.map(this.project) }
           </div>

@@ -20,7 +20,7 @@ class Footer extends Component {
       <footer className={classes}>
         <a href="mailto:brianagu@gmail.com" className={styles.link}>contact</a>
         <span className={styles.copyright}>
-          &copy;2017 – <img src={infinityIcon} className={styles.infinity} />
+          &copy;2017 – <img src={infinityIcon} className={styles.infinity} alt="" />
         </span>
         <a href="https://instagram.com/brianagu" target="_blank" rel="noopener noreferrer" className={styles.link}>instagram</a>
       </footer>
