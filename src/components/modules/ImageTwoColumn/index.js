@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import CustomPropTypes from 'lib/CustomPropTypes';
 
-import Picture from 'components/Picture';
+import Asset from 'components/Asset';
 
 import styles from './styles.scss';
 
@@ -23,12 +23,12 @@ class ImageTwoColumn extends Component {
     return (
       <section className={styles.container}>
         <div className={styles.content}>
-          <Picture
+          <Asset
             className={styles.picture}
             asset={one}
             sizes={sizes}
           />
-          <Picture
+          <Asset
             className={styles.picture}
             asset={two}
             sizes={sizes}

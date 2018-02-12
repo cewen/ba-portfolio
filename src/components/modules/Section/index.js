@@ -3,7 +3,7 @@ import classNames from 'classnames';
 
 import CustomPropTypes from 'lib/CustomPropTypes';
 
-import Picture from 'components/Picture';
+import Asset from 'components/Asset';
 
 import styles from './styles.scss';
 
@@ -29,7 +29,7 @@ class Section extends Component {
             </p>
           </div>
 
-          <Picture
+          <Asset
             className={styles.picture}
             asset={content.fields.images[0]}
             sizes={{

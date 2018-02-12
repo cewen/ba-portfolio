@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 import CustomPropTypes from 'lib/CustomPropTypes';
 
-import Picture from 'components/Picture';
+import Asset from 'components/Asset';
 import getModule from 'views/Project/getModule';
 
 import styles from './styles.scss';
@@ -64,7 +64,7 @@ class Project extends Component {
           </div>
         </header>
 
-        <Picture
+        <Asset
           className={styles.hero}
           asset={fields.hero}
           sizes={{

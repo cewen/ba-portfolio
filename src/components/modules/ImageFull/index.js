@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import CustomPropTypes from 'lib/CustomPropTypes';
 
-import Picture from 'components/Picture';
+import Asset from 'components/Asset';
 
 import styles from './styles.scss';
 
@@ -17,7 +17,7 @@ class ImageFull extends Component {
 
     return (
       <section className={styles.container}>
-        <Picture
+        <Asset
           asset={image}
           sizes={{
             s: { width: 720 },

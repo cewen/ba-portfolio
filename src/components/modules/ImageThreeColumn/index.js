@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import CustomPropTypes from 'lib/CustomPropTypes';
 import BTE from 'lib/BTE';
 
-import Picture from 'components/Picture';
+import Asset from 'components/Asset';
 
 import styles from './styles.scss';
 
@@ -19,13 +19,14 @@ class ImageThreeColumn extends Component {
 
   getHeight() {
     const breakpoints = BTE.getBreakpoints();
+    const { imageOne, imageTwo } = this;
 
-    if (!this.imageOne || !this.imageTwo) {
+    if (!imageOne || !imageTwo) {
       return;
     }
 
     if (breakpoints.m) {
-      const height = this.imageOne.el.offsetHeight + this.imageTwo.el.offsetHeight + 120;
+      const height = imageOne.offsetHeight + imageTwo.offsetHeight + 120;
       this.setState({ contentHeight: height });
     } else {
       this.setState({ contentHeight: '' });
@@ -37,6 +38,8 @@ class ImageThreeColumn extends Component {
     BTE.monitorResize();
     BTE.on('imagesLoaded', this.getHeight.bind(this));
     BTE.on('resize', this.getHeight.bind(this));
+
+    this.getHeight();
   }
 
   componentWillUnmount() {
@@ -56,24 +59,25 @@ class ImageThreeColumn extends Component {
 
     return (
       <section className={styles.container}>
-        <div className={styles.content} ref={ el => this.content = el} style={{height: contentHeight}}>
-          <Picture
-            ref={el => this.imageOne = el}
-            className={styles.picture}
-            asset={one}
-            sizes={sizes}
-          />
-          <Picture
-            ref={el => this.imageTwo = el}
-            className={styles.picture}
-            asset={two}
-            sizes={sizes}
-          />
-          <Picture
-            className={styles.picture}
-            asset={three}
-            sizes={sizes}
-          />
+        <div className={styles.content} style={{height: contentHeight}}>
+          <div className={styles.picture} ref={el => this.imageOne = el}>
+            <Asset
+              asset={one}
+              sizes={sizes}
+            />
+          </div>
+          <div className={styles.picture} ref={el => this.imageTwo = el}>
+            <Asset
+              asset={two}
+              sizes={sizes}
+            />
+          </div>
+          <div className={styles.picture}>
+            <Asset
+              asset={three}
+              sizes={sizes}
+            />
+          </div>
         </div>
       </section>
     );

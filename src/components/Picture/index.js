@@ -38,7 +38,7 @@ class Picture extends Component {
     const { alt, className, sizes } = this.props;
 
     return (
-      <picture className={className} ref={el => this.el = el}>
+      <picture className={className}>
         {sizes.l && this.srcSet('l')}
         {sizes.m && this.srcSet('m')}
         <img src={this.src('s')} onLoad={this.imageLoaded} alt={alt} />

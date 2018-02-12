@@ -3,7 +3,7 @@ import classNames from 'classnames';
 
 import CustomPropTypes from 'lib/CustomPropTypes';
 
-import Picture from 'components/Picture';
+import Asset from 'components/Asset';
 
 import styles from './styles.scss';
 
@@ -62,7 +62,7 @@ class Image extends Component {
     return (
       <section className={classes}>
         <div className={styles.content}>
-          <Picture
+          <Asset
             className={styles.picture}
             asset={image}
             sizes={this.sizes()}
