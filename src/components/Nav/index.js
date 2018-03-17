@@ -20,9 +20,9 @@ class Nav extends Component {
       <div className={classes}>
         <Link to="/" className={styles.name}>brian-a</Link>
 
-        <span className={styles.index} onClick={toggleIndex}>
+        <a className={styles.index} onClick={toggleIndex}>
           {text}
-        </span>
+        </a>
       </div>
     );
   }

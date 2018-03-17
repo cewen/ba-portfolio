@@ -94,10 +94,10 @@
 
 .subtitle {
   @include type-title;
-  margin-bottom: rem(15px);
+  margin-bottom: rem(25px);
 
   @include grid-media($grid-m) {
-    margin-bottom: rem(25px);
+    margin-bottom: rem(35px);
   }
 }
 
@@ -118,6 +118,7 @@
   @include grid-media($grid-l) {
     @include grid-column(2);
     order: 1;
+    margin-top: rem(78px);
   }
 }
 
@@ -168,13 +169,16 @@
 .nextHeader {
   @include type-credit-header;
   @include grid-column(6);
+  color: $warm-gray;
 
   @include grid-media($grid-m) {
-    @include grid-column(6);
+    @include grid-column(3);
+    @include grid-push(3);
   }
 
   @include grid-media($grid-l) {
-    @include grid-column(6);
+    @include grid-column(3);
+    @include grid-push(3);
   }
 }
 
@@ -183,10 +187,12 @@
   @include grid-column(6);
 
   @include grid-media($grid-m) {
-    @include grid-column(6);
+    @include grid-column(3);
+    @include grid-push(3);
   }
 
   @include grid-media($grid-l) {
-    @include grid-column(6);
+    @include grid-column(3);
+    @include grid-push(3);
   }
 }

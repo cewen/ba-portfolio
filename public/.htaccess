@@ -1,3 +1,8 @@
+AuthName "Password Protected Area"
+AuthType Basic
+AuthUserFile /home2/brianaco/public_html/.htpasswd
+require valid-user
+
 Options -MultiViews
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f

@@ -20,6 +20,7 @@
   @include grid-media($grid-m) {
     @include grid-column(6);
     padding: rem(65px 0 200px);
+    justify-content: flex-start;
   }
 
   @include grid-media($grid-l) {
@@ -63,11 +64,19 @@
   @include grid-media($grid-m) {
     flex-basis: calc(33.333% - (100px / 3));
     margin-bottom: rem(140px);
+    margin-right: rem(50px);
   }
 
   @include grid-media($grid-l) {
     flex-basis: calc(33.333% - (160px / 3));
     margin-bottom: rem(180px);
+    margin-right: rem(80px);
+  }
+
+  &:nth-child(3n + 1) {
+    @include grid-media($grid-m) {
+      margin-right: 0;
+    }
   }
 }
 

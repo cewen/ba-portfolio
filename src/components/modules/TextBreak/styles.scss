@@ -48,6 +48,7 @@
 .description {
   @include type-body;
   @include grid-column(6);
+  margin: 0;
 
   @include grid-media($grid-m) {
     @include grid-column(6);
