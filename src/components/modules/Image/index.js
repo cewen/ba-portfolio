@@ -50,7 +50,7 @@ class Image extends Component {
     const { images, alignment, type } = this.props.content.fields;
     const [image] = images;
 
-    const classes = classNames(styles.container, 'whatever', {
+    const classes = classNames(styles.container, {
       [styles.small]: type === 'img-small',
       [styles.medium]: type === 'img-medium',
       [styles.large]: type === 'img-large',
