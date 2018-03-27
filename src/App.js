@@ -27,6 +27,10 @@ class App extends Component {
     this.setState({ indexOpen: !indexOpen });
   }
 
+  closeIndex = () => {
+    this.setState({ indexOpen: false });
+  }
+
   componentDidMount() {
     // Get data for Home Page curation
     // This is done here instead of in Home because Index component needs the Featured Project
@@ -60,7 +64,7 @@ class App extends Component {
 
     return (
       <div className={classes}>
-        <Nav projects={projects} toggleIndex={this.toggleIndex} indexOpen={indexOpen} />
+        <Nav projects={projects} toggleIndex={this.toggleIndex} closeIndex={this.closeIndex} indexOpen={indexOpen} />
         <div className={styles.content}>
           { !indexOpen && <Route exact path="/" render={props => <Home curation={curation} projects={projects} {...props} />} /> }
           { !indexOpen && <Route path="/:slug" render={props => <Project projects={projects} {...props} />} /> }

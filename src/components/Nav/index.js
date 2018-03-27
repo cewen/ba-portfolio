@@ -7,18 +7,19 @@ import styles from './styles.scss';
 
 class Nav extends Component {
   static propTypes = {
+    closeIndex: PropTypes.func.isRequired,
     toggleIndex: PropTypes.func.isRequired,
     indexOpen: PropTypes.bool.isRequired,
   };
 
   render() {
-    const { toggleIndex, indexOpen } = this.props;
+    const { closeIndex, toggleIndex, indexOpen } = this.props;
     const text = indexOpen ? 'close' : 'index';
     const classes = classNames(styles.container, { [styles.black]: indexOpen });
 
     return (
       <div className={classes}>
-        <Link to="/" className={styles.name}>brian-a</Link>
+        <Link to="/" className={styles.name} onClick={closeIndex}>brian-a</Link>
 
         <a className={styles.index} onClick={toggleIndex}>
           {text}
