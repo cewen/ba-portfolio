@@ -11,6 +11,7 @@ import styles from './styles.scss';
 
 class Index extends Component {
   static propTypes = {
+    curation: CustomPropTypes.curation.isRequired,
     toggleIndex: PropTypes.func.isRequired,
     projects: PropTypes.arrayOf(CustomPropTypes.project).isRequired,
   };
@@ -44,7 +45,8 @@ class Index extends Component {
   }
 
   render() {
-    const { projects } = this.props;
+    const { curation, projects } = this.props;
+    const { featuredProject } = curation.fields;
 
     return (
       <section className={styles.container}>
@@ -53,7 +55,8 @@ class Index extends Component {
             <h1 className={styles.header}>
               <img src={arrow} className={styles.arrow} alt="" />Project Index
             </h1>
-            { projects.map(this.project) }
+            { this.project(featuredProject) }
+            { projects.filter(project => project.sys.id !== featuredProject.sys.id).map(this.project) }
           </div>
         </div>
       </section>

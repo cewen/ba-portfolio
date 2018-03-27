@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
-import api from 'lib/api';
+import CustomPropTypes from 'lib/CustomPropTypes';
 
 import Bio from 'components/Bio';
 import FeaturedProject from 'components/FeaturedProject';
@@ -9,24 +10,13 @@ import Project from 'components/Project';
 import styles from './styles.scss';
 
 class Home extends Component {
-  state = {
-    curation: {},
+  static propTypes = {
+    curation: CustomPropTypes.curation.isRequired,
+    projects: PropTypes.arrayOf(CustomPropTypes.project).isRequired,
   };
 
-  componentDidMount() {
-    // Get data for Home Page curation
-    api.getEntries({ 'content_type': 'curation' }).then((response) => {
-      const [page] = response.items;
-
-      this.setState((prevState, props) => {
-        return { curation: page };
-      })
-    });
-  }
-
   render() {
-    const { curation } = this.state;
-    const { projects } = this.props;
+    const { curation, projects } = this.props;
 
     if (!curation || !curation.fields) {
       return null;

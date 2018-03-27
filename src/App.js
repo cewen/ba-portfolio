@@ -16,6 +16,7 @@ import styles from './App.scss';
 
 class App extends Component {
   state = {
+    curation: null,
     projects: null,
     indexOpen: false,
   };
@@ -27,6 +28,14 @@ class App extends Component {
   }
 
   componentDidMount() {
+    // Get data for Home Page curation
+    // This is done here instead of in Home because Index component needs the Featured Project
+    api.getEntries({ 'content_type': 'curation' }).then((response) => {
+      const [page] = response.items;
+
+      this.setState({ curation: page });
+    });
+
     // Get list of Projects
     api.getEntries({ 'content_type': 'project' }).then((response) => {
       this.setState({ projects: response.items });
@@ -34,11 +43,15 @@ class App extends Component {
   }
 
   componentDidUpdate() {
-    ReactDOM.findDOMNode(this).scrollIntoView()
+    const { projects } = this.state;
+
+    if (projects) {
+      ReactDOM.findDOMNode(this).scrollIntoView()
+    }
   }
 
   render() {
-    const { projects, indexOpen } = this.state;
+    const { curation, projects, indexOpen } = this.state;
     const classes = classNames({ [styles.black]: indexOpen });
 
     if (!projects) {
@@ -49,9 +62,9 @@ class App extends Component {
       <div className={classes}>
         <Nav projects={projects} toggleIndex={this.toggleIndex} indexOpen={indexOpen} />
         <div className={styles.content}>
-          { !indexOpen && <Route exact path="/" render={props => <Home projects={projects} {...props} />} /> }
+          { !indexOpen && <Route exact path="/" render={props => <Home curation={curation} projects={projects} {...props} />} /> }
           { !indexOpen && <Route path="/:slug" render={props => <Project projects={projects} {...props} />} /> }
-          { indexOpen && <Index projects={projects} toggleIndex={this.toggleIndex} /> }
+          { indexOpen && <Index curation={curation} projects={projects} toggleIndex={this.toggleIndex} /> }
         </div>
         <Footer indexOpen={indexOpen} />
         <GridGuides />
