@@ -14,4 +14,9 @@
   float: left;
   justify-content: space-between;
   align-items: center;
+  padding: 0 #{$gutter-mobile};
+
+  @include grid-media($grid-m) {
+    padding: 0;
+  }
 }

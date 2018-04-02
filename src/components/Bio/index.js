@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import ReactMarkdown from 'react-markdown';
 
 import arrow from 'assets/images/arrow-icon.svg';
 import styles from './styles.scss';
@@ -14,10 +15,8 @@ class Bio extends Component {
 
     return (
       <div className={styles.bio}>
-        <p className={styles.bioText}>
-          {text}
-          <img src={arrow} className={styles.arrow} alt="" />
-        </p>
+        <ReactMarkdown className={styles.bioText} source={text} />
+        <img src={arrow} className={styles.arrow} alt="" />
       </div>
     );
   }

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
+import ReactMarkdown from 'react-markdown';
 
 import CustomPropTypes from 'lib/CustomPropTypes';
 
@@ -80,9 +81,7 @@ class Project extends Component {
               <h2 className={styles.subtitle}>
                 {fields.descriptionHeader}
               </h2>
-              <p className={styles.description}>
-                {fields.descriptionBody}
-              </p>
+              <ReactMarkdown className={styles.description} source={fields.descriptionBody} />
             </div>
 
             <div className={styles.metadatas}>

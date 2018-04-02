@@ -4,6 +4,7 @@
   @include ba-grid-collapse;
   float: left;
   margin-bottom: rem(60px);
+  position: relative;
 
   @include grid-media($grid-m) {
     margin-bottom: rem(105px);
@@ -28,21 +29,27 @@
     position: relative;
     left: rem(-40px);
   }
+
+  p {
+    margin-bottom: 0;
+  }
 }
 
 .arrow {
+  @include grid-column(6);
   display: block;
   width: rem(12px);
   margin-top: rem(30px);
 
   @include grid-media($grid-m) {
+    @include grid-column(6);
     width: rem(16px);
   }
 
   @include grid-media($grid-l) {
     position: absolute;
-    top: 0;
-    left: rem(-100px);
+    top: rem(40px);
+    left: rem(70px);
     margin-top: rem(12px);
   }
 }

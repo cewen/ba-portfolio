@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import classNames from 'classnames';
+import ReactMarkdown from 'react-markdown';
 
 import CustomPropTypes from 'lib/CustomPropTypes';
 
@@ -24,9 +25,7 @@ class Section extends Component {
             <h1 className={styles.title}>
               {content.fields.title}
             </h1>
-            <p className={styles.description}>
-              {content.fields.description}
-            </p>
+            <ReactMarkdown className={styles.description} source={content.fields.description} />
           </div>
 
           <Asset

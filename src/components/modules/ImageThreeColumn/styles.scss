@@ -3,6 +3,7 @@
 .container {
   @include ba-grid-container;
   margin-bottom: rem(80px);
+  overflow: hidden;
 
   @include grid-media($grid-m) {
     margin-bottom: rem(120px);

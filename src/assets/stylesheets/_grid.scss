@@ -41,7 +41,6 @@ $grid-l: (
 }
 
 @mixin ba-grid-collapse {
-  @include grid-collapse;
   padding: rem(0 30px);
 
   @include grid-media($grid-m) {
