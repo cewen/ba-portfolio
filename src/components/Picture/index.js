@@ -25,10 +25,10 @@ class Picture extends Component {
     const { sizes, asset } = this.props;
     const { width, height } = sizes[size];
 
-    let url = `${asset.fields.file.url}?w=${width}`;
+    let url = `${asset.fields.file.url}?w=${width * 2}`;
 
     if (height) {
-      return `${url}&h=${height}`;
+      return `${url}&h=${height * 2}`;
     }
 
     return url;
